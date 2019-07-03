@@ -4,8 +4,12 @@
   "description": "An example app made with GraphQL and Node JS.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Hava",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "graphql-yoga": "^1.18.0"
+  }
 }
