@@ -1,0 +1,42 @@
+type Query {
+  info: String!
+  feed: [Link!]!
+  # Fetch a single link by its `id`
+  link(id: ID!): Link
+}
+
+type Mutation {
+  # Create a link
+  createLink(url: String!, description: String!): Link!
+
+  # Update a link
+  updateLink(id: ID!, url: String, description: String): Link
+
+  # Delete a link
+  deleteLink(id: ID!): Link
+
+  # Sign up to use API
+  signup(email: String!, password: String!, name: String!): AuthPayload
+
+  # Login to query API
+  login(email: String!, password: String!): AuthPayload
+}
+
+type Link {
+  id: ID!
+  description: String!
+  url: String!
+  postedBy: User
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  links: [Link!]!
+}
