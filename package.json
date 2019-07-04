@@ -5,11 +5,24 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "dev": "npx nodemon src/index.js",
+    "docker:db:up": "docker-compose up -d",
+    "docker:db:start": "docker start graph-mongo graph-prisma",
+    "docker:db:stop": "docker stop graph-mongo graph-prisma",
+    "db:init": "prisma init --endpoint http://localhost:4466",
+    "db:deploy": "prisma deploy",
+    "db:generate": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Hava",
   "license": "ISC",
   "dependencies": {
-    "graphql-yoga": "^1.18.0"
+    "bcryptjs": "^2.4.3",
+    "graphql-yoga": "^1.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "prisma-client-lib": "^1.34.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }

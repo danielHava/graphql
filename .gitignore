@@ -1,4 +1,5 @@
 node_modules
+generated
 *.lock
 .DS_Store
 .env
