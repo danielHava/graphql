@@ -9,7 +9,8 @@ generate:
   - generator: javascript-client
     output: ./src/generated/prisma-client
 
+# This is done automatic
 # Hook gets invoked every time after you run prisma deploy
-hooks:
-  post-deploy:
-    - prisma generate
+# hooks:
+#   post-deploy:
+#     - prisma generate
